@@ -126,11 +126,34 @@
             font-style: italic
         }
         
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url(SourceSans3-Regular.otf);
+        }
+        
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url(SourceSans3-Bold.otf);
+            font-weight: bold;
+        }
+        
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url(SourceSans3-It.otf);
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url(SourceSans3-BoldIt.otf);
+            font-weight: bold;
+            font-style: italic
+        }
+        
         body {
             margin: 0;
             font-size: larger;
             overflow: hidden;
-            font-feature-settings: 'zero'
         }
         
         div {
@@ -189,7 +212,7 @@
             width: 1.5ex;
             height: 1.5ex;
             border-radius: 1em;
-            transition: 0.15s
+            transition: margin-left 0.15s
         }
         
         header section {
@@ -241,6 +264,26 @@
             color: var(--a)
         }
         
+        #t:focus~div [for=t],
+        #c:focus~div [for=c],
+        #w:focus~div [for=w],
+        #s:focus~div [for=s],
+         :focus {
+            outline: 1px dotted currentColor
+        }
+        
+        #t:focus~div [for=t] b,
+        #c:focus~div [for=c] b,
+        #w:focus~div [for=w] b,
+        #s:focus~div [for=s] b {
+            background: currentColor
+        }
+        
+        a:focus {
+            color: currentColor;
+            text-decoration-color: currentColor;
+        }
+        
         #c:not(:checked)~div {
             filter: invert(0.2)
         }
@@ -257,14 +300,14 @@
         #c:checked~div [for=c] b,
         #w:checked~div [for=w] b,
         #s:checked~div [for=s] b {
-            margin-left: .75em
+            margin-left: .75em;
         }
         
-        #fs:checked~div article {
+        #fx:checked~div article {
             font-family: sans-serif;
         }
         
-        #fa:checked~div article {
+        #fh:checked~div article {
             font-family: 'Atkinson Hyperlegible';
         }
         
@@ -284,13 +327,18 @@
             font-family: 'Recursive Sans Linear';
         }
         
+        #fs:checked~div article {
+            font-family: 'Source Sans 3';
+        }
+        
         body,
         blockquote:first-child {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         
         input {
-            display: none
+            position: absolute;
+            z-index: -1
         }
         
         h1 {
@@ -337,17 +385,18 @@
 </head>
 
 <body>
-    <input type="checkbox" id="t">
-    <input type="checkbox" id="c">
-    <input type="checkbox" id="w">
-    <input type="checkbox" id="s">
-    <input type="radio" name="f" id="fy">
-    <input type="radio" name="f" id="fs">
-    <input type="radio" name="f" id="fa">
-    <input type="radio" name="f" id="fg">
-    <input type="radio" name="f" id="fi">
-    <input type="radio" name="f" id="frc">
-    <input type="radio" name="f" id="frl">
+    <input tabindex="1" type="checkbox" id="t">
+    <input tabindex="2" type="checkbox" id="c">
+    <input tabindex="3" type="checkbox" id="w">
+    <input tabindex="4" type="checkbox" id="s">
+    <input tabindex="5" type="radio" name="f" id="fy">
+    <input tabindex="14" type="radio" name="f" id="fx">
+    <input tabindex="14" type="radio" name="f" id="fh">
+    <input tabindex="14" type="radio" name="f" id="fg">
+    <input tabindex="14" type="radio" name="f" id="fi">
+    <input tabindex="14" type="radio" name="f" id="frc">
+    <input tabindex="14" type="radio" name="f" id="frl">
+    <input tabindex="14" type="radio" name="f" id="fs">
     <div class="d">
         <header class="d">
             <section>
@@ -358,9 +407,9 @@
                 <label for="w">Weight: <span>normal <i><b></b></i> bold</span></label>
                 <label for="s">Style: <span>normal <i><b></b></i> italic</span></label>
             </section>
-            <a href="https://github.com/abrudz/sans" target="_blank">♥</a>
+            <a tabindex="6" href="https://github.com/abrudz/sans" target="_blank">♥</a>
         </header>
-        <article>
+        <article tabindex=7>
             <noscript><h1>This site uses absolutely no scripts or trackers.<br>You can <a href="https://github.com/abrudz/sans" target="_blank">check the source</a> to verify this.<br>However, custom webfonts are essential to its purpose.<br>It  therefore cannot function when <span class="m">noscript</span> is enabled.</h1></noscript>
             <h2 id="h1">Good sans-serif fonts</h2>
             <p>What makes a sans-serif font good?</p>
@@ -378,28 +427,39 @@
                 and “0” (digit zero) side-by-side, it can be hard to tell which is which. These problems exist with almost all sans-serif fonts today.
             </p>
             <h3>A solution</h3>
-            <p>To enable instant recognition of each character, “I” (capital “eye”) must be fitted with slab-serifs (horizontal bars), while “l” (lowercase “ell”) gets a curled tail, “1” (digit one) maintains a prominent slanted top serif, and “0” (digit
-                zero) has an inner slash or dot. Incidentally, this also avoids any confusion with “|” (vertical bar). While this may be obvious, very few fonts in fact do this. The only ones I’ve found living up to all the above requirements are (with
-                links to repositories):
+            <p>To enable instant recognition of each character, “I” (capital “eye”) must be fitted with slab-serifs (horizontal bars), while “l” (lowercase “ell”) gets a finial, “1” (digit one) maintains a prominent slanted top serif, and “0” (digit zero)
+                has an inner slash or dot. Incidentally, this also avoids any confusion with “|” (vertical bar). While this may be obvious, very few fonts in fact do this. The only ones I’ve found living up to all the above requirements are (with links
+                to repositories):
             </p>
             <ul>
-                <li><a href="https://github.com/googlefonts/atkinson-hyperlegible/tree/main/fonts" target="_blank">Atkinson Hyperlegible (grotesque)</a></li>
-                <li><a href="https://go.googlesource.com/image/+/master/font/gofont/" target="_blank">Go (humanist)</a></li>
-                <li><a href="https://github.com/IBM/plex/" target="_blank">IBM Plex Sans (grotesque)</a></li>
-                <li><a href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Casual (cursive)</a></li>
-                <li><a href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Linear (slab-serif)</a></li>
+                <li><a tabindex="8" href="https://github.com/googlefonts/atkinson-hyperlegible/tree/main/fonts" target="_blank">Atkinson Hyperlegible</a> (grotesque)</li>
+                <li><a tabindex="9" href="https://go.googlesource.com/image/+/master/font/gofont/" target="_blank">Go</a> (humanist)</li>
+                <li><a tabindex="10" href="https://github.com/IBM/plex/" target="_blank">IBM Plex Sans<sup>1</sup></a> (grotesque)</li>
+                <li><a tabindex="11" href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Casual<sup>1</sup></a> (cursive)</li>
+                <li><a tabindex="12" href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Linear<sup>1</sup></a> (slab-serif)</li>
+                <li><a tabindex="13" href="https://github.com/adobe-fonts/source-sans" target="_blank">Source Sans 3<sup>2</sup></a> (grotesque/humanist)</li>
             </ul>
-            <p>Even for the last three, <span class="m">font-feature-settings:'zero'</span> is needed to get a slashed zero. Some editors will not allow choosing this, rendering even these fonts inadequate.</p>
+            <p>Notes:</p>
+            <ol>
+                <li>Requires <span class="m">font-feature-settings: 'zero'</span> for slashed “0” (digit zero).</li>
+                <li>Requires <span class="m">font-feature-settings: 'ss01', 'zero'</span> for barred “I” (capital “eye”) and slashed “0” (digit zero).</li>
+            </ol>
+            <p>Some editors do not allow choosing font features, which makes even these fonts inadequate.</p>
             <h3>Font samples</h3>
             <p>Click on a sample to make generic text on this page use that font:</p>
             <section>
                 <label for="fy"><blockquote>Your system UI font</blockquote></label>
-                <label for="fs"><blockquote style="font-family: sans-serif"></blockquote></label>
-                <label for="fa"><blockquote style="font-family: Atkinson Hyperlegible"></blockquote></label>
-                <label for="fg"><blockquote style="font-family: Go"></blockquote></label>
-                <label for="fi"><blockquote style="font-family: IBM Plex Sans"></blockquote></label>
-                <label for="frc"><blockquote style="font-family: Recursive Sans Casual"></blockquote></label>
-                <label for="frl"><blockquote style="font-family: Recursive Sans Linear"></blockquote></label>
+                <label for="fx"><blockquote style="font-family: sans-serif"></blockquote></label>
+                <label for="fh"><blockquote style="font-family: 'Atkinson Hyperlegible'"></blockquote></label>
+                <label for="fg"><blockquote style="font-family: 'Go'"></blockquote></label>
+                <label for="fi"><blockquote style="font-family: 'IBM Plex Sans';
+font-feature-settings: 'zero'"></blockquote></label>
+                <label for="frc"><blockquote style="font-family: 'Recursive Sans Casual';
+font-feature-settings: 'zero'"></blockquote></label>
+                <label for="frl"><blockquote style="font-family: 'Recursive Sans Linear';
+font-feature-settings: 'zero'"></blockquote></label>
+                <label for="fs"><blockquote style="font-family: 'Source Sans 3';
+font-feature-settings: 'ss01', 'zero'"></blockquote></label>
 
                 <footer><small>Made with <a href="https://github.com/abrudz/sans" target="_blank">♥</a> using plain HTML and CSS ― absolutely no JavaScript.</small></footer>
             </section>
