@@ -245,11 +245,11 @@
             filter: invert(0.2)
         }
         
-        #w:checked~div {
+        #w:checked~div article {
             font-weight: bold
         }
         
-        #s:checked~div {
+        #s:checked~div article {
             font-style: italic
         }
         
@@ -304,6 +304,10 @@
         
         h3~p {
             margin-top: 0
+        }
+        
+        .m {
+            font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", "Menlo", "Monaco", "Consolas", monospace;
         }
         
         blockquote {
@@ -379,12 +383,11 @@
                 <li><a href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Casual (cursive)</a></li>
                 <li><a href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Linear (slab-serif)</a></li>
             </ul>
-            <p>Even for the last three, <code>font-feature-settings:'zero'</code> is needed to get a slashed zero. Some editors will not allow choosing this, rendering even these fonts inadequate.</p>
+            <p>Even for the last three, <span class="m">font-feature-settings:'zero'</span> is needed to get a slashed zero. Some editors will not allow choosing this, rendering even these fonts inadequate.</p>
             <h3>Font samples</h3>
             <p>Click on a sample to make generic text on this page use that font:</p>
-            <section> <label for="fy">
-                <blockquote>Your system UI font</blockquote>
-                </label>
+            <section>
+                <label for="fy"><blockquote>Your system UI font</blockquote></label>
                 <label for="fs"><blockquote style="font-family: sans-serif"></blockquote></label>
                 <label for="fa"><blockquote style="font-family: Atkinson Hyperlegible"></blockquote></label>
                 <label for="fg"><blockquote style="font-family: Go"></blockquote></label>
@@ -392,9 +395,7 @@
                 <label for="frc"><blockquote style="font-family: Recursive Sans Casual"></blockquote></label>
                 <label for="frl"><blockquote style="font-family: Recursive Sans Linear"></blockquote></label>
 
-                <footer>
-                    <small>Made with <a href="https://github.com/abrudz/sans" target="_blank">♥</a> using plain HTML and CSS ― no JavaScript.</small>
-                </footer>
+                <footer><small>Made with <a href="https://github.com/abrudz/sans" target="_blank">♥</a> using plain HTML and CSS ― absolutely no JavaScript.</small></footer>
             </section>
         </article>
     </div>
