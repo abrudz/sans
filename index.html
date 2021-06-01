@@ -1,0 +1,406 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Good sans-serif fonts</title>
+    <style>
+        @font-face {
+            font-family: 'Atkinson Hyperlegible';
+            src: url(Atkinson-Hyperlegible-Regular-102.otf);
+        }
+        
+        @font-face {
+            font-family: 'Atkinson Hyperlegible';
+            src: url(Atkinson-Hyperlegible-Bold-102.otf);
+            font-weight: bold;
+        }
+        
+        @font-face {
+            font-family: 'Atkinson Hyperlegible';
+            src: url(Atkinson-Hyperlegible-Italic-102.otf);
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Atkinson Hyperlegible';
+            src: url(Atkinson-Hyperlegible-BoldItalic-102.otf);
+            font-weight: bold;
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Go';
+            src: url(Go-Regular.ttf);
+        }
+        
+        @font-face {
+            font-family: 'Go';
+            src: url(Go-Bold.ttf);
+            font-weight: bold;
+        }
+        
+        @font-face {
+            font-family: 'Go';
+            src: url(Go-Italic.ttf);
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Go';
+            src: url(Go-Bold-Italic.ttf);
+            font-weight: bold;
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            src: url(IBMPlexSans-Regular.otf);
+        }
+        
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            src: url(IBMPlexSans-Bold.otf);
+            font-weight: bold;
+        }
+        
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            src: url(IBMPlexSans-Italic.otf);
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            src: url(IBMPlexSans-BoldItalic.otf);
+            font-weight: bold;
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Casual';
+            src: url(RecursiveSansCslSt-Regular.ttf);
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Casual';
+            src: url(RecursiveSansCslSt-Bold.ttf);
+            font-weight: bold;
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Casual';
+            src: url(RecursiveSansCslSt-Italic.ttf);
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Casual';
+            src: url(RecursiveSansCslSt-BdItalic.ttf);
+            font-weight: bold;
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Linear';
+            src: url(RecursiveSansLnrSt-Regular.ttf);
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Linear';
+            src: url(RecursiveSansLnrSt-Bold.ttf);
+            font-weight: bold;
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Linear';
+            src: url(RecursiveSansCslSt-Italic.ttf);
+            font-style: italic
+        }
+        
+        @font-face {
+            font-family: 'Recursive Sans Linear';
+            src: url(RecursiveSansLnrSt-BoldItalic.ttf);
+            font-weight: bold;
+            font-style: italic
+        }
+        
+        body {
+            margin: 0;
+            font-size: larger;
+            overflow: hidden;
+            font-feature-settings: 'zero'
+        }
+        
+        div {
+            display: flex;
+            flex-flow: column;
+            height: 100vh;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration-color: #777
+        }
+        
+        header a,
+        footer a {
+            color: #777;
+            text-decoration: none;
+        }
+        
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0 1 auto;
+            border-bottom: 1px solid #777;
+            line-height: 2em;
+        }
+        
+        header * {
+            display: inline-block
+        }
+        
+        header a {
+            position: absolute;
+            font-size: x-large;
+            top: 0;
+            right: 0;
+            padding: 0em 0.5em
+        }
+        
+        header label {
+            cursor: pointer;
+            user-select: none;
+            padding: 0 1em;
+            width: 13em;
+        }
+        
+        label i {
+            border: 1px solid currentColor;
+            width: 3ex;
+            height: 1.5ex;
+            border-radius: 1em
+        }
+        
+        label b {
+            background: #777;
+            width: 1.5ex;
+            height: 1.5ex;
+            border-radius: 1em;
+            transition: 0.15s
+        }
+        
+        header section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        article {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0 1em;
+        }
+        
+         :root {
+            --a: #000;
+            --b: #fff
+        }
+        
+        .tl {
+            display: none
+        }
+        
+        .td {
+            display: inline
+        }
+        
+        @media (prefers-color-scheme: light) {
+             :root {
+                --a: #fff;
+                --b: #000;
+            }
+            .tl {
+                display: inline
+            }
+            .td {
+                display: none
+            }
+        }
+        
+        .d {
+            background: var(--a);
+            color: var(--b)
+        }
+        
+        #t:checked~div,
+        #t:checked~div header {
+            background: var(--b);
+            color: var(--a)
+        }
+        
+        #c:not(:checked)~div {
+            filter: invert(0.2)
+        }
+        
+        #w:checked~div {
+            font-weight: bold
+        }
+        
+        #s:checked~div {
+            font-style: italic
+        }
+        
+        #t:checked~div [for=t] b,
+        #c:checked~div [for=c] b,
+        #w:checked~div [for=w] b,
+        #s:checked~div [for=s] b {
+            margin-left: .75em
+        }
+        
+        #fs:checked~div article {
+            font-family: sans-serif;
+        }
+        
+        #fa:checked~div article {
+            font-family: 'Atkinson Hyperlegible';
+        }
+        
+        #fg:checked~div article {
+            font-family: 'Go';
+        }
+        
+        #fi:checked~div article {
+            font-family: 'IBM Plex Sans';
+        }
+        
+        #frc:checked~div article {
+            font-family: 'Recursive Sans Casual';
+        }
+        
+        #frl:checked~div article {
+            font-family: 'Recursive Sans Linear';
+        }
+        
+        body,
+        blockquote:first-child {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        input {
+            display: none
+        }
+        
+        h2,
+        h3 {
+            font-weight: unset
+        }
+        
+        h3 {
+            margin-bottom: 0.25em
+        }
+        
+        h3~p {
+            margin-top: 0
+        }
+        
+        blockquote {
+            font-size: larger;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        blockquote:after {
+            display: inline;
+            white-space: pre-wrap;
+            content: attr(style)"\aIl1 & O0o   $#!+? () [] {}   ― – -0123456789%\a'WALTZ, BAD NYMPH; FOR QUICK JIGS VEX.'\a@ \"waltz, bad nymph; for quick jigs vex.\""
+        }
+        
+        footer {
+            padding: 1em
+        }
+        
+        article section {
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="t">
+    <input type="checkbox" id="c">
+    <input type="checkbox" id="w">
+    <input type="checkbox" id="s">
+    <input type="radio" name="f" id="fy">
+    <input type="radio" name="f" id="fs">
+    <input type="radio" name="f" id="fa">
+    <input type="radio" name="f" id="fg">
+    <input type="radio" name="f" id="fi">
+    <input type="radio" name="f" id="frc">
+    <input type="radio" name="f" id="frl">
+    <div class="d">
+        <header class="d">
+            <section>
+                <label for="t">Theme: <span><span class="td">dark</span><span class="tl">light</span> <i><b></b></i> <span class="td">light</span><span class="tl">dark</span></span></label>
+                <label for="c">Contrast: <span>low <i><b></b></i> high</span></label>
+            </section>
+            <section>
+                <label for="w">Weight: <span>normal <i><b></b></i> bold</span></label>
+                <label for="s">Style: <span>normal <i><b></b></i> italic</span></label>
+            </section>
+            <a href="https://github.com/abrudz/sans" target="_blank">♥</a>
+        </header>
+        <article>
+            <h2 id="h1">Good sans-serif fonts</h2>
+            <p>What makes a sans-serif font good?</p>
+            <ul>
+                <li>Context-free recognition of “I” (capital “eye”) and “l” (lowercase “ell”) and “1” (digit one)</li>
+                <li>Context-free recognition of “O” (capital “oh”) and “0” (digit zero) and “o” (lowercase “oh”)</li>
+                <li>Availability of at least normal, <b>bold</b>, <i>italic</i>, and <b><i>bold italic</i></b> for formatting flexibility
+                </li>
+                <li>Permissive licensing (libre; free as in beer) to prevent legal issues during use</li>
+            </ul>
+            <h3>Background</h3>
+            <p>Many fonts render “I” (capital “eye”) practically identical to “l” (lowercase “ell”), or “l” (lowercase “ell”) practically identical to “1” (digit one). Even those fonts that have three distinct glyphs, tend to let either “I” (capital “eye”)
+                or “l” (lowercase “ell”) be a non-descript tall rectangle, meaning that the reader needs to know the font well, to determine which character the glyph represents. Similarly, many fonts have a “0” (digit zero) which is either identical
+                to, or a narrower variant of “O” (capital “oh”), or have “0” (digit zero) virtually identical to “o” (lowercase “oh”). Again, without familiarity, or comparing “O” (capital “oh”) and “0” (digit zero) side-by-side, it can be hard to tell
+                which is which. These problems exist with almost all sans-serif fonts today.
+            </p>
+            <h3>A solution</h3>
+            <p>To enable instant recognition of each character, “I” (capital “eye”) must be fitted with slab-serifs (horizontal bars), while “l” (lowercase “ell”) gets a curled tail, “1” (digit one) maintains a prominent slanted top serif, and “0” (digit
+                zero) has an inner slash or dot. While this may be obvious, very few fonts in fact do this. The only ones I’ve found living up to all the above requirements are (with links to repositories):
+            </p>
+            <ul>
+                <li><a href="https://github.com/googlefonts/atkinson-hyperlegible/tree/main/fonts" target="_blank">Atkinson Hyperlegible (grotesque)</a></li>
+                <li><a href="https://go.googlesource.com/image/+/master/font/gofont/" target="_blank">Go (humanist)</a></li>
+                <li><a href="https://github.com/IBM/plex/" target="_blank">IBM Plex Sans (grotesque)</a></li>
+                <li><a href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Casual (cursive)</a></li>
+                <li><a href="https://github.com/arrowtype/recursive/tree/main/fonts/recursive_for_googlefonts/static" target="_blank">Recursive Sans Linear (slab-serif)</a></li>
+            </ul>
+            <p>Even for the last three, <code>font-feature-settings:'zero'</code> is needed to get a slashed zero. Some editors will not allow choosing this, rendering even these fonts inadequate.</p>
+            <h3>Font samples</h3>
+            <p>Click on a sample to make generic text on this page use that font:</p>
+            <section> <label for="fy">
+                <blockquote>Your system UI font</blockquote>
+                </label>
+                <label for="fs"><blockquote style="font-family: sans-serif"></blockquote></label>
+                <label for="fa"><blockquote style="font-family: Atkinson Hyperlegible"></blockquote></label>
+                <label for="fg"><blockquote style="font-family: Go"></blockquote></label>
+                <label for="fi"><blockquote style="font-family: IBM Plex Sans"></blockquote></label>
+                <label for="frc"><blockquote style="font-family: Recursive Sans Casual"></blockquote></label>
+                <label for="frl"><blockquote style="font-family: Recursive Sans Linear"></blockquote></label>
+
+                <footer>
+                    <small>Made with <a href="https://github.com/abrudz/sans" target="_blank">♥</a> using plain HTML and CSS ― no JavaScript.</small>
+                </footer>
+            </section>
+        </article>
+    </div>
+</body>
+
+</html>iv>
+</body>
+
+</html>
